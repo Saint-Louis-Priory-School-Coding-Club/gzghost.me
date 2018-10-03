@@ -41,7 +41,7 @@ if (isset($_POST['signup'])) {
         Your account has been created, you can login after you have activated your account by pressing the url below.
 
         Please click this link to activate your account:
-        https://www.gzghost.me/verify.php?email='.$email.'&hash='.$hash.'';
+        '. $site .'/verify.php?email='.$email.'&hash='.$hash.'';
 
         $headers = 'From:noreply@yourwebsite.com' . "\r\n";
         mail($to, $subject, $message, $headers);

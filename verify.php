@@ -8,10 +8,7 @@
         <?php include 'vheader.php';?>
         <div class="jumbotron text-center">
         <?php
-$db_host = "localhost";
-$db_name = "id7292113_users";
-$db_user = "id7292113_gzghost";
-$db_pass = "#XFCE4life!";
+        include 'location.php';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -23,6 +20,7 @@ if ($conn->connect_error) {
 
     $count = $result->num_rows;
 }
+
             if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
 }else{
     echo '<h1>Error 404: The page you entered does not exist</h1>';
