@@ -21,24 +21,30 @@
       <li class='<?php echo $active[3] ?>'><a href="<?php echo $site ?>/contact">Contact us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class='dropdown <?php echo $active[4] ?>'>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <span class="glyphicon glyphicon-wrench"></span>&nbsp;Account <span class="caret"></span>&nbsp;&nbsp;</a>
-      <ul class="dropdown-menu">
-        <?php
+      <?php
+      if($active[4] !== 'active') {
+        echo '
+        <li class="dropdown '. $active[4] .'">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-wrench"></span>&nbsp;Account <span class="caret"></span>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <ul class="dropdown-menu">
+        ';
+      }
         if (isset($_SESSION['user']))  {
           echo '
           <li><a href="'. $site .'/user/dashboard"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;Dashboard</a></li>
-          <li><a href="'. $site . '/login/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
+          <li><a href="'. $site . '/login/logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
           ';
         } else {
           echo '
           <li><a href="'. $site .'/login/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="'. $site .'/login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="'. $site .'/login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
           ';
         }
+        if ($active[4] !== 'active') {
+          echo '</ul>';
+        }
         ?>
-      </ul>
       </ul>
   </div>
 </nav>

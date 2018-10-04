@@ -6,5 +6,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <?php
     include 'location.php';
-    $active = ['active','-product','-about','-contact','-login','-register','-loggedin'];
+    $active = ['active','-product','-about','-contact','-account'];
     ?>

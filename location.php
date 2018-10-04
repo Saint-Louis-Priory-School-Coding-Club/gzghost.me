@@ -5,4 +5,7 @@ $db_host = "localhost";
 $db_name = "id7292113_users";
 $db_user = "id7292113_gzghost";
 $db_pass = "#XFCE4life!";
+$phpmyadminlink = 'http://localhost/phpmyadmin';
+$filemanagerlink;
+$sitemanagerlink;
 ?>

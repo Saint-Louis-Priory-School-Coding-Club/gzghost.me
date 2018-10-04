@@ -5,10 +5,8 @@
         <title>Verify Account</title>
     </head>
     <body>
-        <?php include 'vheader.php';?>
-        <div class="jumbotron text-center">
+      <?php include 'header.php';?>
         <?php
-        include 'location.php';
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -23,7 +21,11 @@ if ($conn->connect_error) {
 
             if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
 }else{
-    echo '<h1>Error 404: The page you entered does not exist</h1>';
+    echo '<div class="container-fluid text-center">
+      <h1><br><br><br><br><br></h1>
+  <h1 style="color:red;">404 Error: Page Not Found</h1>
+  <p>The URL you have entered is invalid or has been moved</p>
+  </div>';
 die();
 echo "you should not see this";
 }
@@ -43,6 +45,5 @@ echo '<h1 style="color:green;">SUCCESS: your account has been verified</h1>';
     echo '<h1 style="color:red;">FAILURE: invalid URL or account has already been verified</h1>';
 }
 ?>
-</div>
 </body>
 </html>

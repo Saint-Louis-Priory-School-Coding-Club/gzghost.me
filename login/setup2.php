@@ -7,6 +7,6 @@
 <?php
 include '../location.php';
 # replace the given page with the page you want active. (remember arrays start at 0)
-$active = ['-home','-product','-about','-contact','-login','active','-loggedin'];
+$active = ['-home','-product','-about','-contact','active'];
 include '../header.php';
 ?>
