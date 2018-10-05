@@ -23,6 +23,9 @@ if ($conn->connect_error) {
 }
 
             if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
+              $email = trim($_GET['email']);
+              $hash =  trim($_GET['hash']);
+               $active =  0;
 }else{
     echo '
       <h1><br><br><br><br><br></h1>
@@ -31,11 +34,6 @@ if ($conn->connect_error) {
   </div>';
 die();
 echo "you should not see this";
-}
-if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
-    $email = trim($_GET['email']);
-    $hash =  trim($_GET['hash']);
-     $active =  0;
 }
 $search = "SELECT email, hash, active FROM users WHERE email='".$email."' AND hash='".$hash."' AND active='".$active."'";
 $result = $conn->query($search);

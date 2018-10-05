@@ -6,7 +6,7 @@ if (isset($_SESSION['user']) != "") {
     header("Location: index.php");
 }
 include_once 'dbconnect.php';
-
+include '../location.php';
 if (isset($_POST['signup'])) {
 
     $uname = trim($_POST['uname']); // get posted data and remove whitespace
@@ -43,7 +43,7 @@ if (isset($_POST['signup'])) {
         Please click this link to activate your account:
         '. $site .'/verify.php?email='.$email.'&hash='.$hash.'';
 
-        $headers = 'From:noreply@yourwebsite.com' . "\r\n";
+        $headers = 'From:noreply@'.$sitemail.'' . "\r\n";
         mail($to, $subject, $message, $headers);
 
         $user_id = mysqli_insert_id($conn);
@@ -142,6 +142,9 @@ if (isset($_POST['signup'])) {
 
                 <div class="form-group">
                     <a href="login.php" type="button" class="btn btn-block btn-success" name="btn-login">Login</a>
+                </div>
+                <div class="form-group">
+                    <a href="reset.php" type="button" class="btn btn-block btn-info" name="reset">Forgot Password</a>
                 </div>
 
             </div>
