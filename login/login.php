@@ -99,8 +99,11 @@ if (isset($_POST['btn-login'])) {
                 </div>
 
                 <div class="form-group">
-                    <a href="register.php" type="button" class="btn btn-block btn-danger"
+                    <a href="register.php" type="button" class="btn btn-block btn-success"
                        name="btn-login">Register</a>
+                </div>
+                <div class="form-group">
+                    <a href="reset.php" type="button" class="btn btn-block btn-info" name="reset">Forgot Password</a>
                 </div>
 
             </div>

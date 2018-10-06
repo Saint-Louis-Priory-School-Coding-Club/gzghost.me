@@ -5,7 +5,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">GZGHost</a>
+        <a class="navbar-brand" href="<?php echo $site?>">GZGHost</a>
   </div>
   <div class="container-fluid navbar-collapse collapse" id="myNavbar">
     <ul class="nav navbar-nav">

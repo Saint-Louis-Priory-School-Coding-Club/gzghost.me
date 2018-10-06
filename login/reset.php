@@ -8,18 +8,20 @@ $email = trim($_POST['email']);
 $resethash = md5( rand(0,1000));
 }
 
-$search = "SELECT email, resethash FROM users WHERE email='".$email."'";
-
+$search = "SELECT email, resethash, username FROM users WHERE email='".$email."'";
+$res = $conn->query("SELECT * FROM users WHERE email='".$email."'");
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 $result = $conn->query($search);
 $match = $result->num_rows;
 if($match > 0){
 $sql = "UPDATE users SET resethash='".$resethash."' WHERE email='".$email."'";
 $query = $conn->query($sql);
-
+$username = $userRow['username'];
+echo $username;
 $to = $email;
 $subject = 'Password | Reset';
 $message = '
-Someone has requested to reset your password. If this was not you please change your password immidatly
+Someone has requested to reset the password on user account '.$username.'. If this was not you please change your password immidatly
 In order to reset your password please click on the link below:
 
 '.$site.'/resetverify.php?email='.$email.'&token='.$resethash.'';

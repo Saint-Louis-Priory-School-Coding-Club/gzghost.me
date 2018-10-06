@@ -52,8 +52,9 @@ $message = 'success';
   <title>Reset Password</title>
   <link rel="stylesheet" href="login/assets/css/bootstrap.min.css" type="text/css"/>
   <link rel="stylesheet" href="login/assets/css/style.css" type="text/css"/>
-  <?php include 'header.php';
-  include 'head.php';?>
+  <?php   include 'head.php';
+  include 'header.php';
+?>
 </head>
 <body>
   <br><br><br><br>
